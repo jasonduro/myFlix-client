@@ -7,22 +7,28 @@ export const MainView = () => {
     {
       id: 1,
       title: "Interstellar",
+      description: "Matt fights the 4th dimension", 
+      genre: "Science Fiction", 
       image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0816692%2F&psig=AOvVaw0ebheitXJHdRJuL8PoM8HY&ust=1677158733160000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCNio-Kadqf0CFQAAAAAdAAAAABAD",
+        "https://www.euromax-cinemas.de/images/Breite_400px_RGB/p_20303.jpg",
       director: "Christopher Nolan"
     },
     {
       id: 2,
       title: "The Dark Knight",
+      description: "Batman fights Joker", 
+      genre: "Science Fiction", 
       image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt0468569%2F&psig=AOvVaw2rEvYnOUX0yNs2qUdmpaUW&ust=1677158951875000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCJCWlZ-eqf0CFQAAAAAdAAAAABAD",
+        "https://m.media-amazon.com/images/S/pv-target-images/dc46567834074e00d648c6d819bc8fd68b166554b3e919d53683d03f02dc1e6f._SX780_SY600_.jpg",
       director: "Christopher Nolan"
     },
     {
       id: 3,
       title: "Inception",
+      description: "Leo fights dreams", 
+      genre: "Science Fiction", 
       image:
-        "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.imdb.com%2Ftitle%2Ftt1375666%2F&psig=AOvVaw0Xg_jV6d7gzbIZpDb7xWbQ&ust=1677159062753000&source=images&cd=vfe&ved=0CBAQjRxqFwoTCOjRy8Seqf0CFQAAAAAdAAAAABAD",
+        "https://img.fruugo.com/product/8/14/14592148_max.jpg",
       director: "Christopher Nolan"
     }
   ]);
@@ -31,7 +37,7 @@ export const MainView = () => {
 
   if (selectedMovie) {
     return (
-      <MovieView Movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
+      <MovieView movie={selectedMovie} onBackClick={() => setSelectedMovie(null)} />
     );
   }
 
