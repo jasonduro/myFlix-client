@@ -27290,46 +27290,33 @@ var _movieView = require("../movie-view/movie-view");
 var _s = $RefreshSig$();
 const MainView = ()=>{
     _s();
-    const [movies, setMovies] = (0, _react.useState)([
-        {
-            id: 1,
-            title: "Interstellar",
-            description: "Matt fights the 4th dimension",
-            genre: "Science Fiction",
-            image: "https://www.euromax-cinemas.de/images/Breite_400px_RGB/p_20303.jpg",
-            director: "Christopher Nolan"
-        },
-        {
-            id: 2,
-            title: "The Dark Knight",
-            description: "Batman fights Joker",
-            genre: "Science Fiction",
-            image: "https://m.media-amazon.com/images/S/pv-target-images/dc46567834074e00d648c6d819bc8fd68b166554b3e919d53683d03f02dc1e6f._SX780_SY600_.jpg",
-            director: "Christopher Nolan"
-        },
-        {
-            id: 3,
-            title: "Inception",
-            description: "Leo fights dreams",
-            genre: "Science Fiction",
-            image: "https://img.fruugo.com/product/8/14/14592148_max.jpg",
-            director: "Christopher Nolan"
-        }
-    ]);
+    const [movies, setMovies] = (0, _react.useState)([]);
     const [selectedMovie, setSelectedMovie] = (0, _react.useState)(null);
+    (0, _react.useEffect)(()=>{
+        fetch("https://myflix-app-jl.herokuapp.com/movies").then((response)=>response.json()).then((data)=>{
+            const moviesFromApi = data.map((movie)=>{
+                return {
+                    title: movie.Title
+                };
+            });
+            setMovies(moviesFromApi);
+        }).catch((error)=>{
+            console.error("Error fetching movie data: ", error);
+        });
+    }, []);
     if (selectedMovie) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _movieView.MovieView), {
         movie: selectedMovie,
         onBackClick: ()=>setSelectedMovie(null)
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 40,
+        lineNumber: 29,
         columnNumber: 7
     }, undefined);
     if (movies.length === 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "The list is empty!"
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 45,
+        lineNumber: 34,
         columnNumber: 12
     }, undefined);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -27340,16 +27327,16 @@ const MainView = ()=>{
                 }
             }, movie.id, false, {
                 fileName: "components/main-view/main-view.jsx",
-                lineNumber: 51,
+                lineNumber: 40,
                 columnNumber: 9
             }, undefined))
     }, void 0, false, {
         fileName: "components/main-view/main-view.jsx",
-        lineNumber: 49,
+        lineNumber: 38,
         columnNumber: 5
     }, undefined);
 };
-_s(MainView, "He//pWsnuthlKzSZFziXcYIpq2k=");
+_s(MainView, "PO+XgOji7E32nFJj3H5UPLPJ7w4=");
 _c = MainView;
 var _c;
 $RefreshReg$(_c, "MainView");
@@ -27359,7 +27346,7 @@ $RefreshReg$(_c, "MainView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK"}],"8z54c":[function(require,module,exports) {
+},{"react":"21dqq","../movie-card/movie-card":"8z54c","../movie-view/movie-view":"lNY7v","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK","react/jsx-dev-runtime":"iTorj"}],"8z54c":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$42ca = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -27432,12 +27419,12 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "MovieView", ()=>MovieView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const MovieView = ({ movie , onBackClick  })=>{
+const MovieView = ({ movies , onBackClick  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    src: movie.image,
+                    src: movies.image,
                     alt: "movie poster"
                 }, void 0, false, {
                     fileName: "components/movie-view/movie-view.jsx",
@@ -27459,7 +27446,7 @@ const MovieView = ({ movie , onBackClick  })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.title
+                        children: movies.title
                     }, void 0, false, {
                         fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 9,
@@ -27481,7 +27468,7 @@ const MovieView = ({ movie , onBackClick  })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.description
+                        children: movies.description
                     }, void 0, false, {
                         fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 13,
@@ -27503,7 +27490,7 @@ const MovieView = ({ movie , onBackClick  })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.genre
+                        children: movies.genre
                     }, void 0, false, {
                         fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 17,
@@ -27525,7 +27512,7 @@ const MovieView = ({ movie , onBackClick  })=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        children: movie.director
+                        children: movies.director
                     }, void 0, false, {
                         fileName: "components/movie-view/movie-view.jsx",
                         lineNumber: 21,
