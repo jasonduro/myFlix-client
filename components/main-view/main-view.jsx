@@ -16,17 +16,12 @@ export const MainView = () => {
             key: movie.id,
             title: movie.Title,
             description: movie.Description,
-            genre: movie.Genre,
-            director: movie.Director,
-            image: movie.Image,
+            image: movie.Image
           };
         });
-  
+        console.log(data);
         setMovie(moviesFromApi);
-      })
-      .catch((error) => {
-        console.error("Error fetching movie data: ", error);
-      });
+  });
   }, []);
   
 
