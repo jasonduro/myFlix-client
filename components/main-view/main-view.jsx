@@ -3,7 +3,8 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 
 export const MainView = () => {
-  const [movies, setMovies] = useState([]);
+  const [movie, setMovie] = useState([]);
+  
   const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
@@ -12,11 +13,16 @@ export const MainView = () => {
       .then((data) => {
         const moviesFromApi = data.map((movie) => {
           return {
-            title: movie.Title
+            key: movie.id,
+            title: movie.Title,
+            description: movie.Description,
+            genre: movie.Genre,
+            director: movie.Director,
+            image: movie.Image,
           };
         });
   
-        setMovies(moviesFromApi);
+        setMovie(moviesFromApi);
       })
       .catch((error) => {
         console.error("Error fetching movie data: ", error);
@@ -30,13 +36,13 @@ export const MainView = () => {
     );
   }
 
-  if (movies.length === 0) {
+  if (movie.length === 0) {
     return <div>The list is empty!</div>;
   }
 
   return (
     <div>
-      {movies.map((movie) => (
+      {movie.map((movie) => (
         <MovieCard
           key={movie.id}
           movie={movie}
