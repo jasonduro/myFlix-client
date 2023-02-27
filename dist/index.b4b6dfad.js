@@ -28325,8 +28325,23 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "LoginView", ()=>LoginView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
 const LoginView = ()=>{
+    const handleSubmit = (event)=>{
+        // this snippet prevenets the default behavior of the form which is to reload the entire page
+        event.preventDefault();
+        const data = {
+            access: username,
+            secret: password
+        };
+        fetch("https://myflix-app-jl.herokuapp.com/login", {
+            method: "POST",
+            body: JSON.stringify(data)
+        });
+    };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+        onSubmit: handleSubmit,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
                 children: [
@@ -28335,13 +28350,13 @@ const LoginView = ()=>{
                         type: "text"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 6,
+                        lineNumber: 23,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 4,
+                lineNumber: 21,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
@@ -28351,13 +28366,13 @@ const LoginView = ()=>{
                         type: "password"
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
-                        lineNumber: 10,
+                        lineNumber: 27,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 8,
+                lineNumber: 25,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -28365,13 +28380,13 @@ const LoginView = ()=>{
                 children: "Submit"
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
-                lineNumber: 12,
+                lineNumber: 29,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/login-view/login-view.jsx",
-        lineNumber: 3,
+        lineNumber: 20,
         columnNumber: 5
     }, undefined);
 };
@@ -28384,6 +28399,6 @@ $RefreshReg$(_c, "LoginView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK"}]},["8inK4","fqErb","d8Dch"], "d8Dch", "parcelRequire028f")
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK","react":"21dqq"}]},["8inK4","fqErb","d8Dch"], "d8Dch", "parcelRequire028f")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
