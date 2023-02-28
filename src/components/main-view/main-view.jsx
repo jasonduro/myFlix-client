@@ -9,10 +9,11 @@ import Row from "react-bootstrap/Row";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 export const MainView = () => {
+/* commented out stored user and token code  
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
+  const [token, setToken] = useState(null); */
   const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
