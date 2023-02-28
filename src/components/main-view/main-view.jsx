@@ -23,8 +23,19 @@ export const MainView = () => {
     })
       .then((response) => response.json())
       .then((movies) => {
+        
+      /* commented out this code - thought I needed it from the exercise:         
+          const moviesFromApi = movies.map((movies) => {
+          return {
+            id: movies._id,
+            title: movies.Title,
+            image: movies.ImagePath,
+            description: movies.Description
+          };
+        }); 
+      */
+                
         setMovies(movies);
-        console.log(movies);
 
   });
   }, [token]);
@@ -34,9 +45,9 @@ export const MainView = () => {
       <NavigationBar
         user={user}
         onLoggedOut={() => {
-          setUser(null),
-          setToken(null),
-          localStorage.clear()
+          setUser(null);
+          setToken(null);
+          localStorage.clear();
         }}
       />
       <Row className="justify-content-md-center">
