@@ -24,6 +24,7 @@ export const MainView = () => {
       .then((response) => response.json())
       .then((movies) => {
         setMovies(movies);
+        console.log(movies);
 
   });
   }, [token]);
@@ -33,9 +34,9 @@ export const MainView = () => {
       <NavigationBar
         user={user}
         onLoggedOut={() => {
-          setUser(null);
-          setToken(null);
-          localStorage.clear();
+          setUser(null),
+          setToken(null),
+          localStorage.clear()
         }}
       />
       <Row className="justify-content-md-center">
@@ -97,7 +98,9 @@ export const MainView = () => {
                   <>
                     {movies.map((movies) => (
                       <Col className="mb-4" key={movies._id} md={3}>
-                        <MovieCard movies={movies} />
+                        <MovieCard 
+                          movies={movies}
+                        />
                       </Col>
                     ))}
                   </>
