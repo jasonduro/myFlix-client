@@ -2930,19 +2930,18 @@ var _client = require("react-dom/client");
 var _mainView = require("./components/main-view/main-view");
 var _container = require("react-bootstrap/Container");
 var _containerDefault = parcelHelpers.interopDefault(_container);
-// Import statement to indicate that you need to bundle `./index.scss`
 var _indexScss = require("./index.scss");
 // Main component (will eventually use all the others)
 const MyFlixApplication = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _containerDefault.default), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _mainView.MainView), {}, void 0, false, {
             fileName: "src/index.jsx",
-            lineNumber: 12,
+            lineNumber: 10,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/index.jsx",
-        lineNumber: 11,
+        lineNumber: 9,
         columnNumber: 3
     }, undefined);
 };
@@ -2953,7 +2952,7 @@ const root = (0, _client.createRoot)(container);
 // Tells React to render your app in the root DOM element
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(MyFlixApplication, {}, void 0, false, {
     fileName: "src/index.jsx",
-    lineNumber: 22,
+    lineNumber: 20,
     columnNumber: 13
 }, undefined));
 var _c;
@@ -2964,7 +2963,7 @@ $RefreshReg$(_c, "MyFlixApplication");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","./index.scss":"lJZlQ","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK","./components/main-view/main-view":"4gflv","react-bootstrap/Container":"hEdsw","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-dom/client":"lOjBx","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK","./components/main-view/main-view":"4gflv","react-bootstrap/Container":"hEdsw","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h","./index.scss":"lJZlQ"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("81db7d79a2e29647");
 
@@ -27149,7 +27148,7 @@ module.exports = require("d3688727ef9f7446");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"lJZlQ":[function() {},{}],"esWEK":[function(require,module,exports) {
+},{}],"esWEK":[function(require,module,exports) {
 "use strict";
 var Refresh = require("ad87661619fe3358");
 function debounce(func, delay) {
@@ -41587,6 +41586,6 @@ $RefreshReg$(_c, "SignupView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80"}]},["8inK4","fqErb","d8Dch"], "d8Dch", "parcelRequire028f")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK","react-bootstrap/Button":"aPzUt","react-bootstrap/Form":"iBZ80"}],"lJZlQ":[function() {},{}]},["8inK4","fqErb","d8Dch"], "d8Dch", "parcelRequire028f")
 
 //# sourceMappingURL=index.b4b6dfad.js.map
