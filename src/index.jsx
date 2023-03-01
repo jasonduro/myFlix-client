@@ -1,6 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import { MainView } from './components/main-view/main-view';
-import { BrowserRouter } from 'react-router-dom';
 
 import Container from "react-bootstrap/Container";
 
