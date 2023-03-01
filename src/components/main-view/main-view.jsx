@@ -120,21 +120,15 @@ export const MainView = () => {
           />
 
         <Route
-          path="/profile/:Username"
+          path="/profile"
           element={
             <>
             {!user ? (
               <Navigate to="/login" replace />
-            ) : user.length === 0 ? (
-              <Col>The is a test 3</Col>
-              ) : (
-                <>
-                  {movies.map((users) => (
-                    <Col className="mb-4" key={users._id} md={3}>
-                      <ProfileView users={users} />
-                    </Col>
-                  ))}
-                </>
+            ) : (
+              <Col>
+                <ProfileView user={user} movies={movies} />
+              </Col>
               )}
             </>
           }

@@ -6,17 +6,24 @@ import UserInfo from "./user-info";
 import FavoriteMovies from "./favorite-movies";
 import UpdateUser from "./update-user";
 
-export function ProfileView({ movies, onUpdatedUserInfo }) {
-  const [user, setUser] = useState({})
-
+export const ProfileView = ({ movies, users }) => {
+  const storedUser = JSON.parse(localStorage.getItem("user"));
+  const storedToken = localStorage.getItem("token");
   const favoriteMovieList = movies.filter((movies) => {});
 
-  const getUser = () => {}
+  //I don't know what code to put in here below: 
+  const getUser = (token) => {}
   const handleSubmit = (e) => {}
   const removeFav = (id) => {}
-  const handleUpdate = (e) => {};
+  const handleUpdate = (e) => {}; 
 
-  useEffect(() => {}, [])
+  useEffect(() => {
+    if (!token) return;
+
+    fetch("https://myflix-app-jl.herokuapp.com/users", {
+      headers: { Authorization: `Bearer ${token}` }
+    })
+  }, []);
 
 
   return (
@@ -25,7 +32,7 @@ export function ProfileView({ movies, onUpdatedUserInfo }) {
         <Col xs={12} sm={4}>
           <Card>
             <Card.Body>
-            <UserInfo name={user.Username} email={user.Email} />
+            <UserInfo name={users.Username} email={users.Email} />
             </Card.Body>
           </Card>
         </Col>
@@ -43,4 +50,4 @@ export function ProfileView({ movies, onUpdatedUserInfo }) {
 
     </Container>
   );
-}
+  }
