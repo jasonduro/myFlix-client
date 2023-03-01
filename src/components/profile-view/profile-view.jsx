@@ -6,7 +6,7 @@ import UserInfo from "./user-info";
 import FavoriteMovies from "./favorite-movies";
 import UpdateUser from "./update-user";
 
-export const ProfileView = ({ movies, users }) => {
+export const ProfileView = ({ movies, user }) => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");
   const favoriteMovieList = movies.filter((movies) => {});
@@ -32,7 +32,7 @@ export const ProfileView = ({ movies, users }) => {
         <Col xs={12} sm={4}>
           <Card>
             <Card.Body>
-            <UserInfo name={users.Username} email={users.Email} />
+            <UserInfo name={Username} email={Email} />
             </Card.Body>
           </Card>
         </Col>
