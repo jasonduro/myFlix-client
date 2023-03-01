@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { Container, Col, Row, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { propTypes } from "prop-types";
 import UserInfo from "./user-info";
@@ -19,10 +20,27 @@ export function ProfileView({ movies, onUpdatedUserInfo }) {
 
 
   return (
-    <div>
-      <UserInfo name={user.Username} email={user.Email} />
+    <Container>
+      <Row>
+        <Col xs={12} sm={4}>
+          <Card>
+            <Card.Body>
+            <UserInfo name={user.Username} email={user.Email} />
+            </Card.Body>
+          </Card>
+        </Col>
+
+        <Col xs={12} sm={8}>
+          <Card>
+            <Card.Body>
+            <UpdateUser handleSubmit={ handleSubmit } handleUpdate={ handleUpdate } />
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+
       <FavoriteMovies favoriteMovieList={favoriteMovieList}/>
-      <UpdateUser handleSubmit={ handleSubmit } handleUpdate={ handleUpdate } />
-    </div>
+
+    </Container>
   );
 }

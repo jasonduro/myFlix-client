@@ -27,7 +27,7 @@ export const MainView = () => {
        
           const moviesFromApi = movies.map((movies) => {
           return {
-            id: movies._id,
+            key: movies._id,
             title: movies.Title,
             image: movies.ImagePath,
             description: movies.Description
@@ -82,7 +82,7 @@ export const MainView = () => {
           />
 
           <Route
-            path="/movies/${movies._id}"
+            path="/movies/${_id}"
             element={
               <>
                 {!user ? (
@@ -109,7 +109,7 @@ export const MainView = () => {
                 ) : (
                   <>
                     {movies.map((movies) => (
-                      <Col className="mb-4" key={movies._id} md={3}>
+                      <Col className="mb-4" key={_id} md={3}>
                         <MovieCard movies={movies} />
                       </Col>
                     ))}
