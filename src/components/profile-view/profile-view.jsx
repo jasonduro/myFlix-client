@@ -1,28 +1,28 @@
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { propTypes } from "prop-types";
+import UserInfo from "./user-info";
+import FavoriteMovies from "./favorite-movies";
+import UpdateUser from "./update-user";
 
-export const ProfileView = ({ users }) => {
-  
+export function ProfileView({ movies, onUpdatedUserInfo }) {
+  const [user, setUser] = useState({})
+
+  const favoriteMovieList = movies.filter((movies) => {});
+
+  const getUser = () => {}
+  const handleSubmit = (e) => {}
+  const removeFav = (id) => {}
+  const handleUpdate = (e) => {};
+
+  useEffect(() => {}, [])
+
+
   return (
     <div>
-      <div>
-        <span>Username: </span>
-        <span>{users.Username}</span>
-      </div>
-      <div>
-        <span>Email: </span>
-        <span>{users.Email}</span>
-      </div>
-      <div>
-        <span>Password: </span>
-        <span>{users.Password}</span>
-      </div>
-      <div>
-        <span>Birthday: </span>
-        <span>{users.Birthday}</span>
-      </div>
-      <Link to={`/`}>
-        <button className="back-button">Back</button>
-      </Link>
+      <UserInfo name={user.Username} email={user.Email} />
+      <FavoriteMovies favoriteMovieList={favoriteMovieList}/>
+      <UpdateUser handleSubmit={ handleSubmit } handleUpdate={ handleUpdate } />
     </div>
   );
-};
+}
