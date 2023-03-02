@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 import "./movie-card.scss";
 
-export const MovieCard = ({ movies, onMovieClick }) => {
+export const MovieCard = ({ movies }) => {
   return (
-    <Card className="h-100" onClick={() => {onMovieClick(movies); }}>
+    <Card className="h-100">
       <Card.Img variant="top" src={movies.ImagePath} />
       <Card.Body>
         <Card.Title>{movies.Title}</Card.Title>
