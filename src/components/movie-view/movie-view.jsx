@@ -22,16 +22,16 @@ export const MovieView = ({ movies }) => {
         <span>Description: </span>
         <span>{movies.Description}</span>
       </div>
-
-{/*        <div>
+{/* 
+        <div>
         <span>Director: </span>
         <span>{movies.Director.Name}</span>
       </div>
       <div>
         <span>Genre: </span>
         <span>{movies.Genre.Name}</span>
-      </div>  */}
-
+      </div>  
+ */}
       <Link to={`/`}>
         <Button className="back-button">Back</Button>
       </Link>

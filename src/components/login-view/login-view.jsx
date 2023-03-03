@@ -50,7 +50,7 @@ export const LoginView = ({ onLoggedIn }) => {
         required
         />
       </Form.Group>
-      <Form.Group controlId="formPassword" class="mb-3">
+      <Form.Group controlId="formPassword" className="mb-3">
       <Form.Label>Password:</Form.Label>
         <Form.Control 
         type="password"
