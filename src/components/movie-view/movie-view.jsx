@@ -1,13 +1,18 @@
 import { useParams } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 
 export const MovieView = ({ movies }) => {
   const { movieId } = useParams();
-//find
+
   const movie = movies.find((m) => m.id === movieId);
 
   {console.log(movies)}
+
+  if (!movie) {
+    // movie not found, redirect to homepage
+    return <Redirect to="/" />;
+  }
 
   //display individual movie info
   return (
