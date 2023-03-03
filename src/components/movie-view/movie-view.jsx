@@ -9,6 +9,8 @@ export const MovieView = ({ movies }) => {
 
   {console.log(movies)}
 
+  //display movie info
+
   return (
     <div>
       <div>
