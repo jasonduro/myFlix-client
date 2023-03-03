@@ -4,13 +4,12 @@ import Button from "react-bootstrap/Button";
 
 export const MovieView = ({ movies }) => {
   const { movieId } = useParams();
-
+//find
   const movie = movies.find((m) => m.id === movieId);
 
   {console.log(movies)}
 
-  //display movie info
-
+  //display individual movie info
   return (
     <div>
       <div>
