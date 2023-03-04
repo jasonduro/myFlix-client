@@ -27423,25 +27423,6 @@ const MainView = ()=>{
                             fileName: "src/components/main-view/main-view.jsx",
                             lineNumber: 97,
                             columnNumber: 9
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/profile",
-                            element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-                                children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
-                                    to: "/login",
-                                    replace: true
-                                }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
-                                    md: 8,
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
-                                        users: user,
-                                        token: token
-                                    }, void 0, false, void 0, void 0)
-                                }, void 0, false, void 0, void 0)
-                            }, void 0, false)
-                        }, void 0, false, {
-                            fileName: "src/components/main-view/main-view.jsx",
-                            lineNumber: 119,
-                            columnNumber: 9
                         }, undefined)
                     ]
                 }, void 0, true, {
@@ -27460,29 +27441,7 @@ const MainView = ()=>{
         lineNumber: 36,
         columnNumber: 5
     }, undefined);
-}; /*      ) : selectedMovie ? (
-    <Col md={8}>
-      <MovieView 
-      movies={selectedMovie} 
-      onBackClick={() => setSelectedMovie(null)} 
-      />
-      </Col>
-  ) : movies.length === 0 ? (
-    <div>The list is empty!</div>
-  ) : (
-    <>
-      {movies.map((movie) => (
-        <Col className="mb-5" key={movie.id} md={3}>
-        <MovieCard
-          movies={movie}
-          onMovieClick={(newSelectedMovie) => {
-            setSelectedMovie(newSelectedMovie);
-          }}
-        />
-        </Col>
-      ))}
-      </>
-  )} */  //need to add back the logout button - <Button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</Button>
+};
 _s(MainView, "MiVFSd94fa8LBR1h2vYjJl5pFt8=");
 _c = MainView;
 var _c;

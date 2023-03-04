@@ -116,23 +116,6 @@ export const MainView = () => {
           }
         />
 
-        <Route
-          path="/profile"
-          element={
-            <>
-              {!user ? (
-                <Navigate to="/login" replace />
-              ) : ( 
-                <Col md={8}>
-                  <ProfileView
-                   users={user}
-                   token={token}
-                    />
-                </Col>
-              )}
-            </>
-          }
-        />
       </Routes>
     </Row>
   </BrowserRouter>
@@ -141,30 +124,5 @@ export const MainView = () => {
 
 
 
-/*      ) : selectedMovie ? (
-    <Col md={8}>
-      <MovieView 
-      movies={selectedMovie} 
-      onBackClick={() => setSelectedMovie(null)} 
-      />
-      </Col>
-  ) : movies.length === 0 ? (
-    <div>The list is empty!</div>
-  ) : (
-    <>
-      {movies.map((movie) => (
-        <Col className="mb-5" key={movie.id} md={3}>
-        <MovieCard
-          movies={movie}
-          onMovieClick={(newSelectedMovie) => {
-            setSelectedMovie(newSelectedMovie);
-          }}
-        />
-        </Col>
-      ))}
-      </>
-  )} */
-   
-//need to add back the logout button - <Button onClick={() => { setUser(null); setToken(null); localStorage.clear(); }}>Logout</Button>
 
 
