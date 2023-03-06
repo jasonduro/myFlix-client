@@ -12,21 +12,21 @@ import { NavigationBar } from "../navigation-bar/navigation-bar";
 export const MainView = () => {
 
   const storedUser = JSON.parse(localStorage.getItem("user"));
-  const storedToken = localStorage.getItem("token");  const [user, setUser] = useState(null);
+  const storedToken = localStorage.getItem("token");  
+  const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
   const [movies, setMovies] = useState([]);
 
+
   useEffect(() => {
     if (!token) return;
-
-    fetch("https://myflix-app-jl.herokuapp.com/movies", {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then((response) => response.json())
-      .then((movies) => { 
-
-      setMovies(movies);
-  });
+      fetch("https://myflix-app-jl.herokuapp.com/movies", {
+        headers: { Authorization: `Bearer ${token}` }
+      })
+        .then((response) => response.json())
+        .then((movies) => { 
+          setMovies(movies);
+        });
   }, [token]);
 
   return (
