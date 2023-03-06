@@ -7,8 +7,6 @@ export const MovieView = ({ movies }) => {
 
   const movie = movies.find((m) => m._id === movieId);
 
-  {console.log(movies)}
-
   if (!movie) {
     // movie not found, redirect to homepage
     return <Redirect to="/" />;
