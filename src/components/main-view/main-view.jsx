@@ -9,14 +9,12 @@ import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
 
-
 export const MainView = () => {
 
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");  const [user, setUser] = useState(null);
   const [token, setToken] = useState(null);
   const [movies, setMovies] = useState([]);
-  const [FavoriteMovies, setFavoriteMovies] = useState([]);
 
   useEffect(() => {
     if (!token) return;
