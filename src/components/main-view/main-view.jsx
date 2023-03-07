@@ -8,12 +8,13 @@ import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
 import { NavigationBar } from "../navigation-bar/navigation-bar";
+import { ProfileView } from "../profile-view/profile-view";
 
 export const MainView = () => {
-
   const storedUser = JSON.parse(localStorage.getItem("user"));
-  const storedToken = localStorage.getItem("token");  const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
+  const storedToken = localStorage.getItem("token");  
+  const [user, setUser] = useState(storedUser ? storedUser : null);
+  const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
@@ -108,6 +109,21 @@ export const MainView = () => {
                     </Col>
                   ))}
                 </>
+              )}
+            </>
+          }
+        />
+
+        <Route
+          path="/profile/:userId"
+          element={
+            <>
+              {!user ? (
+                <Navigate to="/login" replace />
+              ) : (
+                <Col md={5}>
+                  <ProfileView user={user} />
+                </Col>
               )}
             </>
           }

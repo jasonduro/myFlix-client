@@ -6,3 +6,4 @@ Added Build Tool Parcel
 Points to src/index.html
 <br>
 Terminal Command: `parcel src/index.html`
+
