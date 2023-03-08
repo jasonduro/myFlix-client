@@ -4,30 +4,25 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Redirect } from "react-router-dom";
 
-export const ProfileView = ({ user }) => {
-
+export const ProfileView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");  
-  const [user, setUser] = useState(storedUser ? storedUser : null);
+  const [username, setUsername] = useState(storedUser ? storedUser : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     if (!token) return;
 
-    fetch("https://myflix-app-jl.herokuapp.com/users ", {
+    fetch(`https://myflix-app-jl.herokuapp.com/users/${Username}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => response.json())
-      .then((users) => { 
+      .then((user) => { 
 
-      getUsers(user);
+      getUser(Username, token);
   });
-  }, [token]); 
-
-  if (!user) {
-    // user not found, redirect to homepage
-    return <Redirect to="/" />;
-  }
+  }, [token]);
 
   return (
     <div>

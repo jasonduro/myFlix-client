@@ -7,15 +7,18 @@ import { MovieCard } from "../movie-card/movie-card";
 import { MovieView } from "../movie-view/movie-view";
 import { LoginView } from "../login-view/login-view";
 import { SignupView } from "../signup-view/signup-view";
-import { NavigationBar } from "../navigation-bar/navigation-bar";
 import { ProfileView } from "../profile-view/profile-view";
+import { NavigationBar } from "../navigation-bar/navigation-bar";
+
 
 export const MainView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
-  const storedToken = localStorage.getItem("token");  
-  const [user, setUser] = useState(storedUser ? storedUser : null);
+  const storedToken = localStorage.getItem("token");
+  const storedUsername = localStorage.getItem("username");
+  const [username, setUsername] = useState(storedUsername ? storedUsername : null);
   const [token, setToken] = useState(storedToken ? storedToken : null);
   const [movies, setMovies] = useState([]);
+  const [user, setUser] = useState(storedUser ? storedUser : null);
 
   useEffect(() => {
     if (!token) return;
@@ -123,9 +126,10 @@ export const MainView = () => {
               ) : (
                 <Col md={5}>
                   <ProfileView 
-                  users={user}
-                  
+                    user={user}
+                    token={token}
                   />
+                  {console.log(user)}
                 </Col>
               )}
             </>
