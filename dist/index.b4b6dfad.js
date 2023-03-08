@@ -27424,7 +27424,7 @@ const MainView = ()=>{
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Route), {
-                            path: "/profile/:userId",
+                            path: "/profile",
                             element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
                                 children: !user ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                                     to: "/login",
@@ -27432,7 +27432,7 @@ const MainView = ()=>{
                                 }, void 0, false, void 0, void 0) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _colDefault.default), {
                                     md: 5,
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _profileView.ProfileView), {
-                                        user: user
+                                        users: user
                                     }, void 0, false, void 0, void 0)
                                 }, void 0, false, void 0, void 0)
                             }, void 0, false)
@@ -46856,29 +46856,27 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactRouterDom = require("react-router-dom");
 var _reactRouterDomDefault = parcelHelpers.interopDefault(_reactRouterDom);
-var _reactRouter = require("react-router");
 var _s = $RefreshSig$();
 const ProfileView = ({ user  })=>{
     _s();
-    /*   let { userId } = useParams();
-  const user = users.find((u) => u.Username === userId); */ const storedUser = JSON.parse(localStorage.getItem("user"));
+    const storedUser = JSON.parse(localStorage.getItem("user"));
     const storedToken = localStorage.getItem("token");
-    const [user, setUser] = useState(storedUser ? storedUser : null);
-    const [token, setToken] = useState(storedToken ? storedToken : null);
-    /* 
-  useEffect(() => {
-    if (!token) return;
-
-    fetch("https://myflix-app-jl.herokuapp.com/users", {
-      headers: { Authorization: `Bearer ${token}` }
-    })
-      .then((response) => response.json())
-      .then((users) => { 
-
-      setUsers(user);
-  });
-  }, [token]); */ if (!user) // user not found, redirect to homepage
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Redirect, {
+    const [user, setUser] = (0, _react.useState)(storedUser ? storedUser : null);
+    const [token, setToken] = (0, _react.useState)(storedToken ? storedToken : null);
+    (0, _react.useEffect)(()=>{
+        if (!token) return;
+        fetch("https://myflix-app-jl.herokuapp.com/users ", {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        }).then((response)=>response.json()).then((users)=>{
+            getUsers(user);
+        });
+    }, [
+        token
+    ]);
+    if (!user) // user not found, redirect to homepage
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Redirect), {
         to: "/"
     }, void 0, false, {
         fileName: "src/components/profile-view/profile-view.jsx",
@@ -46953,7 +46951,7 @@ const ProfileView = ({ user  })=>{
         columnNumber: 5
     }, undefined);
 };
-_s(ProfileView, "ic24/bxaqjOSLlAVt1ybqWm/Vvg=");
+_s(ProfileView, "sSDa7750AGY//8trueq2Ults7HI=");
 _c = ProfileView;
 var _c;
 $RefreshReg$(_c, "ProfileView");
@@ -46963,6 +46961,6 @@ $RefreshReg$(_c, "ProfileView");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK","react-router":"dbWyW","react-router-dom":"9xmpe"}],"lJZlQ":[function() {},{}]},["8inK4","fqErb","d8Dch"], "d8Dch", "parcelRequire028f")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"cYV6h","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"esWEK","react-router-dom":"9xmpe"}],"lJZlQ":[function() {},{}]},["8inK4","fqErb","d8Dch"], "d8Dch", "parcelRequire028f")
 
 //# sourceMappingURL=index.b4b6dfad.js.map

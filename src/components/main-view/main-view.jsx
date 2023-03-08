@@ -115,14 +115,17 @@ export const MainView = () => {
         />
 
         <Route
-          path="/profile/:userId"
+          path="/profile"
           element={
             <>
               {!user ? (
                 <Navigate to="/login" replace />
               ) : (
                 <Col md={5}>
-                  <ProfileView user={user} />
+                  <ProfileView 
+                  users={user}
+                  
+                  />
                 </Col>
               )}
             </>
