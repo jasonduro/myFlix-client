@@ -46856,7 +46856,6 @@ $parcel$ReactRefreshHelpers$3c12.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "ProfileView", ()=>ProfileView);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
@@ -46872,12 +46871,12 @@ const ProfileView = ()=>{
     const [movies, setMovies] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
         if (!token) return;
-        fetch(`https://myflix-app-jl.herokuapp.com/users/${Username}`, {
+        fetch(`https://myflix-app-jl.herokuapp.com/users/${username}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         }).then((response)=>response.json()).then((user1)=>{
-            getUser(Username, token);
+            getUser(username, token);
         });
     }, [
         token
@@ -46952,6 +46951,7 @@ const ProfileView = ()=>{
 };
 _s(ProfileView, "NIyq8mLFapz8uYak72eaolnrYIs=");
 _c = ProfileView;
+exports.default = ProfileView;
 var _c;
 $RefreshReg$(_c, "ProfileView");
 

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useEffect } from "react";
 import { Redirect } from "react-router-dom";
 
-export const ProfileView = () => {
+const ProfileView = () => {
   const storedUser = JSON.parse(localStorage.getItem("user"));
   const storedToken = localStorage.getItem("token");  
   const [username, setUsername] = useState(storedUser ? storedUser : null);
@@ -14,13 +14,13 @@ export const ProfileView = () => {
   useEffect(() => {
     if (!token) return;
 
-    fetch(`https://myflix-app-jl.herokuapp.com/users/${Username}`, {
+    fetch(`https://myflix-app-jl.herokuapp.com/users/${username}`, {
       headers: { Authorization: `Bearer ${token}` }
     })
       .then((response) => response.json())
       .then((user) => { 
 
-      getUser(Username, token);
+      getUser(username, token);
   });
   }, [token]);
 
@@ -40,3 +40,6 @@ export const ProfileView = () => {
     </div>
   );
 };
+
+
+export default ProfileView; 
