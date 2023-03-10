@@ -1,15 +1,15 @@
 import React from "react";
 import Link from "react-router-dom";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Redirect } from "react-router-dom";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Row, Col, Container, Form } from "react-bootstrap";
 import PropTypes from "prop-types";
 import axios from "axios";
-import "./movie-card.scss";
+import "./profile-view.scss";
 
-constructor(); { 
-  super();
+class ProfileView extends React.Component {
+constructor(props) { 
+  super(props);
     this.state = {
       Username: null,
       Password: null,
@@ -19,7 +19,7 @@ constructor(); {
     };
   }
   
-  componentDidMount(); {
+  componentDidMount() {
     const accessToken = localStorage.getItem("token");
   this.getUser(accessToken);
   }
@@ -39,7 +39,7 @@ constructor(); {
   });
   };
   
-  onLoggedOut(); {
+  onLoggedOut() {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
   this.setState({ user: null, }); window.open("/", "_self"); 
@@ -92,7 +92,7 @@ constructor(); {
   });
   };
   
-  onDeleteUser(); {
+  onDeleteUser() {
   const Username = localStorage.getItem("user");
   const token = localStorage.getItem("token");
   
@@ -112,28 +112,27 @@ constructor(); {
   });
   }
   
-  setUsername(value); { this.setState({ Username: value, }); this.Username = value; }
-  setPassword(value); {this.setState({Password: value,});
+  setUsername(value) { this.setState({ Username: value, }); this.Username = value; }
+  setPassword(value) {this.setState({Password: value,});
   this.Password = value;
   }
   
-  setEmail(value); {
+  setEmail(value) {
     this.setState({
       Email: value,
     });
     this.Email = value;
   }
   
-  setBirthday(value); {
-    this.setState({
-      Birthday: value,
-    });
-    this.Birthday = value;
-  }
+  setBirthday(value) {
+    this.setState({ Birthday: value, }); 
+      this.Birthday = value;
+    }
   
-  render(); {
+  render() {
   const { movies } = this.props;
-  const { FavoriteMovies, Username, Email, Birthday, Password } = this.state; return (
+  const { FavoriteMovies, Username, Email, Birthday, Password } = this.state; 
+  return (
     <Container>
       <Row>
         <Col>
@@ -157,12 +156,11 @@ constructor(); {
             <Form
             className="update-form"
             onSubmit={(e) =>
-            this.editUser(
-            e,
-            this.Username,
-            this.Password,
-            this.Email,
-            this.Birthday
+            this.editUser( e,
+              this.Username,
+              this.Password,
+              this.Email, 
+              this.Birthday
             )}>
             <Form.Group>
               <Form.Label>Username</Form.Label>
@@ -233,8 +231,10 @@ constructor(); {
   </Col>
   </Row>
   <Row>
-  {FavoriteMovies.map((ImagePath, Title, _id) => {
-  return (
+  
+  
+  {FavoriteMovies.map((ImagePath, Title, _id) => (
+  <>
     <Col key={_id} className="fav-movie">
     <Figure>
       <Link to={`/movies/${movie._id}`}>
@@ -247,8 +247,9 @@ constructor(); {
   variant="secondary"
   onClick={() => removeFav(movie._id)}>Remove from the list</Button>
   </Col>
-  );
-  })}
+  </>
+  ))}
+
   </Row>
   </Card.Body>
   </Card>
@@ -256,4 +257,5 @@ constructor(); {
   );
   }
 
-  export default ProfileView; 
+}
+export default ProfileView;
