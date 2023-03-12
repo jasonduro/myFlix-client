@@ -5,6 +5,8 @@ import { Redirect } from "react-router-dom";
 import { Button, Card, Row, Col, Container, Form } from "react-bootstrap";
 import PropTypes from "prop-types";
 import axios from "axios";
+import UserInfo from "./user-info";
+import UpdateUser from "./update-user";
 import "./profile-view.scss";
 
 class ProfileView extends React.Component {
@@ -154,96 +156,32 @@ class ProfileView extends React.Component {
 		const { FavoriteMovies, Username, Email, Birthday, Password } = this.state;
 		return (
 			<Container>
-				<Row>
-					<Col>
-						<Card className='user-profile'>
-							<Card.Header>User Profile</Card.Header>
-							<Card.Body>
-								<>
-									<p>Name: {Username}</p>
-									<p>Email: {Email}</p>
-									<p>Birthday: {Birthday}</p>
-								</>
-							</Card.Body>
-						</Card>
-					</Col>
+				<Col>
+					<Card className='user-profile'>
+						<Card.Header>Your Profile</Card.Header>
+						<Card.Body>
+							<UserInfo
+								Username={this.Username}
+								Email={this.Email}
+								Birthday={this.Birthday}
+							/>
+						</Card.Body>
+					</Card>
+				</Col>
 
+				<Row>
 					<Col>
 						<Card className='update-inputs'>
 							<Card.Header>Update Profile</Card.Header>
 							<Card.Body>
 								<Card.Text>
-									<Form
-										className='update-form'
-										onSubmit={(e) =>
-											this.editUser(
-												e,
-												this.Username,
-												this.Password,
-												this.Email,
-												this.Birthday
-											)
-										}
-									>
-										<Form.Group>
-											<Form.Label>Username</Form.Label>
-											<Form.Control
-												type='text'
-												name='Username'
-												placeholder='New Username'
-												onChange={(e) => this.setUsername(e.target.value)}
-												required
-											/>
-										</Form.Group>
-
-										<Form.Group>
-											<Form.Label>Password</Form.Label>
-											<Form.Control
-												type='password'
-												name='Password'
-												placeholder='New Password'
-												onChange={(e) => this.setPassword(e.target.value)}
-												required
-											/>
-										</Form.Group>
-
-										<Form.Group>
-											<Form.Label>Email</Form.Label>
-											<Form.Control
-												type='email'
-												name='Email'
-												placeholder='New Email'
-												onChange={(e) => this.setEmail(e.target.value)}
-												required
-											/>
-										</Form.Group>
-
-										<Form.Group>
-											<Form.Label>Birthday</Form.Label>
-											<Form.Control
-												type='date'
-												name='Birthday'
-												onChange={(e) => this.setBirthday(e.target.value)}
-											/>
-										</Form.Group>
-
-										<Form.Group>
-											<Button
-												variant='warning'
-												type='submit'
-												onClick={() => this.editUser()}
-											>
-												Update User
-											</Button>
-											<Button
-												className='delete-button'
-												variant='danger'
-												onClick={() => this.onDeleteUser()}
-											>
-												Delete User
-											</Button>
-										</Form.Group>
-									</Form>
+									<UpdateUser
+										editUser={this.editUser}
+										setUsername={this.setUsername}
+										setPassword={this.setPassword}
+										setEmail={this.setEmail}
+										setBirthday={this.setBirthday}
+									/>
 								</Card.Text>
 							</Card.Body>
 						</Card>
