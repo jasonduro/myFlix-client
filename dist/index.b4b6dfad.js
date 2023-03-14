@@ -46439,7 +46439,7 @@ const LoginView = ({ onLoggedIn  })=>{
     const [username, setUsername] = (0, _react.useState)("");
     const [password, setPassword] = (0, _react.useState)("");
     const handleSubmit = (event)=>{
-        // this snippet prevenets the default behavior of the form which is to reload the entire page
+        // this snippet prevents the default behavior of the form which is to reload the entire page
         event.preventDefault();
         const data = {
             Username: username,
@@ -46474,7 +46474,7 @@ const LoginView = ({ onLoggedIn  })=>{
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 45,
-                        columnNumber: 9
+                        columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                         type: "text",
@@ -46484,13 +46484,13 @@ const LoginView = ({ onLoggedIn  })=>{
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 46,
-                        columnNumber: 9
+                        columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
                 lineNumber: 44,
-                columnNumber: 7
+                columnNumber: 4
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Group, {
                 controlId: "formPassword",
@@ -46501,7 +46501,7 @@ const LoginView = ({ onLoggedIn  })=>{
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 54,
-                        columnNumber: 7
+                        columnNumber: 5
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _formDefault.default).Control, {
                         type: "password",
@@ -46511,13 +46511,13 @@ const LoginView = ({ onLoggedIn  })=>{
                     }, void 0, false, {
                         fileName: "src/components/login-view/login-view.jsx",
                         lineNumber: 55,
-                        columnNumber: 9
+                        columnNumber: 5
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/components/login-view/login-view.jsx",
                 lineNumber: 53,
-                columnNumber: 7
+                columnNumber: 4
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _buttonDefault.default), {
                 variant: "primary",
@@ -46526,13 +46526,13 @@ const LoginView = ({ onLoggedIn  })=>{
             }, void 0, false, {
                 fileName: "src/components/login-view/login-view.jsx",
                 lineNumber: 62,
-                columnNumber: 7
+                columnNumber: 4
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/components/login-view/login-view.jsx",
         lineNumber: 43,
-        columnNumber: 5
+        columnNumber: 3
     }, undefined);
 };
 _s(LoginView, "Lrw7JeD9zj6OUWhT/IH4OIvPKEk=");
